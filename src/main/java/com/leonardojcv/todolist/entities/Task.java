@@ -7,7 +7,6 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -33,5 +32,12 @@ public class Task {
 	
 	@CreationTimestamp
 	private LocalDateTime createdAt;
+	
+	public void setTitle(String title) throws Exception {
+		if (title.length() > 50) {
+			throw new Exception("O campo title deve conter no máximo 50 caracteres");
+		}
+		this.title = title;
+	}
 	
 }
