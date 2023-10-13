@@ -13,7 +13,7 @@
 	
 	<groupId>com.leonardojcv</groupId>
 	<artifactId>springboot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>springboot</name>
 	<description>Todolist</description>
 	<properties>
