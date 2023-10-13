@@ -25,7 +25,8 @@ public class FilterTaskAuth extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		var servletPath = request.getServletPath();
-		if (servletPath.equals("/tasks")) {
+		//servletPath começa com /tasks
+		if (servletPath.startsWith("/tasks")) {
 			// Pega a autenticação (Usuario e senha)
 			var authorization = request.getHeader("Authorization");
 			// Como a authorization gera a palavra "Basic" é necessário remove-la através do
